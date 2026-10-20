@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Tab</title>
+  <link rel="icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <main class="page">
+    <form id="search-form" class="search" autocomplete="off">
+      <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input id="search-input" class="search__input" type="text" name="q"
+             placeholder="Search or enter website name" spellcheck="false" autofocus>
+    </form>
+
+    <section class="section">
+      <div id="favorites" class="grid"></div>
+      <p id="empty" class="empty" hidden>В «Меню закладок» пока ничего нет.</p>
+    </section>
+  </main>
+
+  <dialog id="folder-dialog" class="folder">
+    <header class="folder__header">
+      <button id="folder-back" class="folder__back" type="button" aria-label="Назад">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 4 7l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <nav id="folder-crumbs" class="folder__crumbs"></nav>
+      <button id="folder-close" class="folder__close" type="button" aria-label="Закрыть">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="m3 3 8 8M11 3l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <div id="folder-grid" class="grid"></div>
+    <p id="folder-empty" class="empty" hidden>Папка пуста.</p>
+  </dialog>
+
+  <script src="newtab.js"></script>
+</body>
+</html>
